@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "ip address",
+  "version": "1.0.0",
+  "description": "ip address demo",
+  "icons":
+  {
+    "16": "img/icon.png",
+    "48": "img/icon.png",
+    "128": "img/icon.png"
+  },
+
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "popup.html",
+    "default_title": "IP Address & Geolocation"
+  },
+  "background": {
+    "page": "background.html"
+
+  },
+  "content_scripts":
+  [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+
+
+      "js": ["js/custom.js","js/jquery-3.6.0.min.js"],
+      "css": ["css/custom.css"],
+
+      "run_at": "document_end"
+    }
+
+
+  ]
+
+
+}
